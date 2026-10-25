@@ -16,6 +16,12 @@
 
 In modern cloud-native systems, downtime directly impacts user experience and revenue. **Self-Healing Infrastructure** is an end-to-end DevOps demonstration that watches over an NGINX web server, instantly identifies crashes or failed health checks, and autonomously triggers an Ansible playbook to resurrect the service and verify recovery.
 
+## 🎯 Project objective
+The objective is to build a system that automatically detects when a service fails, sends an alert, and attempts to recover the service without manual intervention.
+
+In our project, NGINX is the service being monitored. When it stops responding, the system detects the failure and uses Ansible to restart its Docker container.
+
+
 ### 🔄 The Self-Healing Loop:
 1. 🩺 **Monitor:** Blackbox Exporter continuously probes the NGINX HTTP endpoint.
 2. 🚨 **Detect:** Prometheus evaluates scrape metrics against alert rules.

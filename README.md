@@ -204,10 +204,6 @@ curl -I http://localhost:8081
 
 ---
 
-<p align="center">
-  <b>Built with ❤️ for DevOps & SRE Enthusiasts</b>
-</p>
-
 - 📈 Instrumenting infrastructure health checks with Prometheus and Blackbox Exporter.
 - 🚨 Configuring alerting rules and notification pipelines in Alertmanager.
 - 🔗 Building event-driven automation bridges using Python & Flask.
@@ -216,7 +212,5 @@ curl -I http://localhost:8081
 
 ---
 
-<p align="center">
-  <b>Built with ❤️ for DevOps & SRE Enthusiasts</b>
-</p>
+
 

@@ -1,0 +1,27 @@
+
+---
+- name: Recover failed NGINX service
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Restart the NGINX Docker container
+      ansible.builtin.command:
+        cmd: docker restart nginx-service
+      register: restart_result
+      changed_when: true
+
+    - name: Wait for NGINX to become available
+      ansible.builtin.uri:
+        url: http://localhost:8081
+        method: GET
+        status_code: 200
+      register: nginx_health
+      retries: 10
+      delay: 3
+      until: nginx_health.status == 200
+
+    - name: Confirm recovery
+      ansible.builtin.debug:
+        msg: "NGINX recovered successfully. HTTP status: {{ nginx_health.status }}"
